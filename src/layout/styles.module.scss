@@ -1,0 +1,44 @@
+$layout-space: 1rem;
+
+@mixin layout-box {
+  border-radius: $layout-space;
+  backdrop-filter: blur(20px);
+}
+
+.baseLayout {
+  padding: $layout-space;
+  height: 100vh;
+  background: url('../assets/img/bg.jpg');
+  background-size: cover;
+}
+
+.wrapper {
+  background-color: unset;
+}
+
+.baseSider {
+  margin-right: $layout-space;
+  padding: 10px;
+  @include layout-box;
+}
+
+.content {
+  @include layout-box;
+  overflow-y: auto;
+  margin-bottom: $layout-space;
+  padding: $layout-space;
+}
+
+.header {
+  @include layout-box;
+  margin-bottom: $layout-space;
+}
+
+.footer {
+  text-align: center;
+  @include layout-box;
+}
+
+.menu {
+  background-color: unset;
+}

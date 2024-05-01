@@ -1,0 +1,25 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.base-layout-bg {
+  background: rgba(255, 255, 255, 0.6) !important;
+}
+
+.dark-mode .base-layout-bg {
+  background: rgba(0, 0, 0, 0.6) !important;
+}
+
+/* SCROLLBAR */
+
+/* width */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #0681ffa8;
+  border-radius: 10px;
+}

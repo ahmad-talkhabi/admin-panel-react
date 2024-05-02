@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { Outlet } from 'react-router-dom';
+// import { Outlet } from 'react-router-dom';
 import { ConfigProvider, Layout, theme } from 'antd';
 import BaseSidebar from './BaseSidebar';
 import BaseHeader from './BaseHeader';
@@ -7,7 +7,7 @@ import BaseFooter from './BaseFooter';
 import styles from './styles.module.scss';
 
 const { Header, Content, Footer, Sider } = Layout;
-export default function BaseLayout() {
+export default function BaseLayout(props) {
   const { darkAlgorithm, defaultAlgorithm } = theme;
   const [darkMode, setDarkMode] = useState(false);
   const toggleDarkMode = () => {
@@ -30,7 +30,8 @@ export default function BaseLayout() {
             <BaseHeader darkMode={darkMode} toggleDarkMode={toggleDarkMode} />
           </Header>
           <Content className={`${styles.content} base-layout-bg`}>
-            <Outlet />
+            { props.children }
+            {/*<Outlet />*/}
           </Content>
           <Footer className={`${styles.footer} base-layout-bg`}>
             <BaseFooter />

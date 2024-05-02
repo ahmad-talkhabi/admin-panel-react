@@ -3,6 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import { Button, Table } from 'antd';
 import { getUsers } from '../../services/userSevices';
 import { TableAction, PageHeader } from '../../components';
+import BaseLayout from '../../layout/BaseLayout.jsx';
 
 export default function Root() {
   function viewItem(id) {
@@ -69,10 +70,12 @@ export default function Root() {
 
   return (
     <>
-      <PageHeader title="User list" subtile="Subtitle">
-        <Button type="primary">Add user</Button>
-      </PageHeader>
-      <Table columns={columns} rowKey={(record) => record.id} dataSource={data} loading={loading} />
+      <BaseLayout>
+        <PageHeader title="User list" subtile="Subtitle">
+          <Button type="primary">Add user</Button>
+        </PageHeader>
+        <Table columns={columns} rowKey={(record) => record.id} dataSource={data} loading={loading} />
+      </BaseLayout>
     </>
   );
 }

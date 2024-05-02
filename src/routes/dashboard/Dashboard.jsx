@@ -1,9 +1,12 @@
 import { PageHeader } from '../../components';
+import BaseLayout from '../../layout/BaseLayout.jsx';
 
 export default function Root() {
   return (
     <>
-      <PageHeader title="Dashboard" subtile="Subtitle" />
+      <BaseLayout>
+        <PageHeader title="Dashboard" subtile="Subtitle" />
+      </BaseLayout>
     </>
   );
 }
